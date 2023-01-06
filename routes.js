@@ -1,6 +1,6 @@
 import Router from "express";
 
-import { addCharacter, characterID, getCharacter } from "./controllers/characterController.js";
+import { addCharacter, characterID, deleteById, getCharacter } from "./controllers/characterController.js";
 
 const router = Router();
 
@@ -16,8 +16,8 @@ router.post("/", (req, res) => {
   addCharacter(req,res)
 })
 
-
-
-
+router.delete("/:id", (req, res) => {
+  deleteById(req,res)
+})
 
 export default router;

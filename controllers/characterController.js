@@ -20,3 +20,9 @@ export const addCharacter =(req, res) => {
     message: "All things serve the Beam"
   })
 }
+
+export const deleteById = (req,res) => {
+  const id = parseInt(req.params.id)
+  students.splice(id, 1)
+  res.status(204).send("Character Removed")
+}
